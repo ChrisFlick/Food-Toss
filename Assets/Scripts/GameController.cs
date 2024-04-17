@@ -21,6 +21,7 @@ public class GameController : MonoBehaviour
 
     private void Awake() 
     {
+        // Check to see if there are dublicate instances and if so destroy this one.
         if (Instance != null) 
         {
             Debug.LogError(
