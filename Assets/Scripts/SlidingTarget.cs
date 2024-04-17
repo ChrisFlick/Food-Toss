@@ -16,15 +16,17 @@ public class SlidingTarget : MonoBehaviour {
         _active = true;
     }
 
-    private void Update() {
-        if (!_active) return;
+    private void Update() 
+    {
+        if (!GameController.Instance.IsActive()) return;
 
         transform.localPosition = new Vector3(
             transform.localPosition.x + _speed * Time.deltaTime * _direction,
             transform.localPosition.y,
             transform.localPosition.z);
 
-        if (Mathf.Abs(transform.localPosition.x) >= MAX_DISTANCE) {
+        if (Mathf.Abs(transform.localPosition.x) >= MAX_DISTANCE) 
+        {
             transform.localPosition = new Vector3(
                 MAX_DISTANCE * _direction,
                 transform.localPosition.y,
