@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class GameController : MonoBehaviour 
 {
@@ -11,6 +12,8 @@ public class GameController : MonoBehaviour
     const float GAME_TIME = 60f;
 
     [SerializeField] private VRButton _startButton;
+
+    [SerializeField] private TextMeshPro _scoreText;
 
     private int _score;
     private int _highScore = 0;
@@ -37,6 +40,8 @@ public class GameController : MonoBehaviour
     private void Start() 
     {
         _startButton.OnPressed += StartButton_OnPressed;
+
+        Target.Instance.OnHit += Target_OnHit;
     }
 
     private void Update()
@@ -48,6 +53,11 @@ public class GameController : MonoBehaviour
         {
             _time = 0;
             _isActive = false;
+
+            if (_score > _highScore)
+            {
+                _highScore = _score;
+            }
         }
     }
 
@@ -61,5 +71,13 @@ public class GameController : MonoBehaviour
         _isActive = true;
         _time = GAME_TIME;
         _score = 0;
+    }
+
+    private void Target_OnHit(object sender, EventArgs e)
+    {
+        if (!_isActive) return;
+
+        _score++;
+        _scoreText.text = _score.ToString();
     }
 }
