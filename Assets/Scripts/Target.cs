@@ -25,12 +25,12 @@ public class Target : MonoBehaviour
         Instance = this;
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
         Debug.Log("Target Hit");
-        if (collision.rigidbody.gameObject.tag != "Ball") return;
+        if (other.gameObject.tag != "Ball") return;
         Debug.Log("Ball");
-        
+
         OnHit?.Invoke(this, EventArgs.Empty);
     }
 }
