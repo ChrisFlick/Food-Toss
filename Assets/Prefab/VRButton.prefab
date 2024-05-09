@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6788969042814792427}
   - component: {fileID: 4755920393232297049}
   - component: {fileID: 3921563154996626149}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PushButton
   m_TagString: Button
   m_Icon: {fileID: 0}
@@ -401,6 +401,7 @@ GameObject:
   - component: {fileID: 6705188899601483462}
   - component: {fileID: 8323956205355422096}
   - component: {fileID: 4308843894949622456}
+  - component: {fileID: 3851370853986425996}
   m_Layer: 0
   m_Name: Frame
   m_TagString: Untagged
@@ -500,3 +501,24 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!65 &3851370853986425996
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5192086307286493971}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 64
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
